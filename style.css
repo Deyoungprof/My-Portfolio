@@ -3,7 +3,6 @@ body {
   margin: 0;
   background: #f4f4f4;
   color: #333;
-  scroll-behavior: smooth;
 }
 
 header {
@@ -11,7 +10,6 @@ header {
   color: white;
   padding: 40px 20px;
   text-align: center;
-  animation: fadeIn 1.5s ease-in-out;
 }
 
 nav {
@@ -25,18 +23,12 @@ nav a {
   margin: 0 15px;
   font-weight: bold;
   text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #f0e14a;
 }
 
 section {
   padding: 40px 20px;
   max-width: 900px;
   margin: auto;
-  animation: fadeIn 1s ease-in-out;
 }
 
 h2 {
@@ -48,11 +40,8 @@ h2 {
   height: 150px;
   object-fit: cover;
   border-radius: 50%;
-  margin-bottom: 20px;
+  margin: 0 auto 20px auto;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .skills, .projects {
@@ -66,28 +55,19 @@ h2 {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.skill:hover, .project:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  max-width: 500px;
-  margin: 0 auto;
 }
 
 .contact-form input,
 .contact-form textarea {
-  padding: 12px;
+  padding: 10px;
   margin-bottom: 15px;
   border-radius: 5px;
   border: 1px solid #aaeeff;
-  font-size: 16px;
 }
 
 button {
@@ -97,7 +77,6 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
   transition: background 0.3s ease;
 }
 
@@ -112,12 +91,6 @@ footer {
   color: white;
 }
 
-/* Animations */
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
 @media (max-width: 600px) {
   header, section {
     padding: 20px 10px;
@@ -127,14 +100,20 @@ footer {
     grid-template-columns: 1fr;
   }
 }
-/* Hide sections initially */
+
+/* Animation Classes */
 .hidden {
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.6s ease-out;
 }
 
-.visible {
+.show {
   opacity: 1;
   transform: translateY(0);
+}
+.skill:hover, .project:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(17, 0, 195, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
